@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="view_google_form_response_tree" model="ir.ui.view">
+        <field name="name">google.form.response.tree</field>
+
+        <field name="model">
+            google.form.response
+        </field>
+
+        <field name="arch" type="xml">
+
+            <tree>
+
+                <field name="employee_name"/>
+
+                <field name="phone"/>
+
+                <field name="project"/>
+
+                <field name="work_date"/>
+
+                <field name="notes"/>
+
+            </tree>
+
+        </field>
+
+    </record>
+
+
+    <record id="action_google_form_response" model="ir.actions.act_window">
+
+        <field name="name">
+            Google Form Responses
+        </field>
+
+        <field name="res_model">
+            google.form.response
+        </field>
+
+        <field name="view_mode">
+            tree,form
+        </field>
+
+    </record>
+
+
+    <menuitem
+        id="menu_google_form_root"
+        name="Google Forms"
+        sequence="10"
+    />
+
+
+    <menuitem
+        id="menu_google_form_responses"
+        name="Responses"
+        parent="menu_google_form_root"
+        action="action_google_form_response"
+    />
+
+</odoo>
